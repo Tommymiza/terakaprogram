@@ -1,0 +1,67 @@
+import React from "react";
+import "../../styles/navbar.scss";
+import { KeyboardArrowDown } from "@mui/icons-material";
+import { Divider } from "@mui/material";
+import { NavLink } from "react-router-dom"
+
+const Navbar = () => {
+  return (
+    <header>
+      <nav>
+        <div>
+          <img
+            src="/images/logo.png"
+            alt=""
+            style={{
+              height: "100px",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+        <ul id="principale">
+          <li><NavLink to={"/"} end>Accueil</NavLink></li>
+          <li>
+          <NavLink to={"/program"}>Programme</NavLink> <KeyboardArrowDown />
+            <ul>
+              <li><NavLink to={"/program/reboisement"}>Modèle de boisement/reboisement</NavLink></li>
+              <Divider sx={{ width: "100%" }}></Divider>
+              <li><NavLink to={"/program/formation"}>Formation</NavLink></li>
+              <Divider sx={{ width: "100%" }}></Divider>
+              <li><NavLink to={"/program/leadership"}>Gouvernance et Leadership</NavLink></li>
+              <Divider sx={{ width: "100%" }}></Divider>
+              <li><NavLink to={"/program/fertilisation"}>Fertilisation croisée</NavLink></li>
+              <Divider sx={{ width: "100%" }}></Divider>
+              <li><NavLink to={"/program/monitoring"}>Monitoring, rapportage et vérification</NavLink></li>
+              <Divider sx={{ width: "100%" }}></Divider>
+              <li><NavLink to={"/program/valeurs"}>Valeurs TERAKA</NavLink></li>
+            </ul>
+          </li>
+          <li><NavLink>Partenaires</NavLink></li>
+          <li>
+          <NavLink>Certification</NavLink> <KeyboardArrowDown />
+            <ul>
+              <li><NavLink>VCS</NavLink></li>
+              <Divider sx={{ width: "100%" }}></Divider>
+              <li><NavLink>CCB</NavLink></li>
+            </ul>
+          </li>
+          <li><NavLink>Objectif de Développement Durable</NavLink></li>
+          <li>
+          <NavLink>S'engager</NavLink> <KeyboardArrowDown />
+            <ul>
+              <li><NavLink>Partenariat professionnel</NavLink></li>
+              <Divider sx={{ width: "100%" }}></Divider>
+              <li><NavLink>Partenariat philanthropique</NavLink></li>
+              <Divider sx={{ width: "100%" }}></Divider>
+              <li><NavLink>Contribution individuelle</NavLink></li>
+            </ul>
+          </li>
+          <li><NavLink>News</NavLink></li>
+          <li><NavLink>Contact</NavLink></li>
+        </ul>
+      </nav>
+    </header>
+  );
+};
+
+export default Navbar;

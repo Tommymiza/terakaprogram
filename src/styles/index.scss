@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+*{
+    font-family: "Open Sans";
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --theme: #88ab32;
+}
