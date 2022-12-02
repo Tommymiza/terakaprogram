@@ -14,6 +14,7 @@ import News from "./components/pages/News"
 import Contact from "./components/pages/Contact"
 import Test from "./components/pages/Test"
 import "./styles/index.scss"
+import Footer from "./components/outils/Footer";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/*" element={<Test />} />
       </Routes>
+      <footer>
+        <Footer />
+      </footer>
     </BrowserRouter>
   );
 }

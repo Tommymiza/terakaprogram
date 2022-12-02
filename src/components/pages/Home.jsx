@@ -55,19 +55,19 @@ const Home = () => {
         <div id="homeNb">
           <div>
             <h1>{surface}</h1>
-            <p>hectares</p>
+            <h3>hectares</h3>
           </div>
           <div>
             <h1>{people}</h1>
-            <p>bénéficiaires</p>
+            <h3>bénéficiaires</h3>
           </div>
           <div>
             <h1>{espece}</h1>
-            <p>espèces</p>
+            <h3>espèces</h3>
           </div>
           <div>
             <h1>{tree} Million</h1>
-            <p>arbres plantés</p>
+            <h3>arbres plantés</h3>
           </div>
         </div>
       </div>

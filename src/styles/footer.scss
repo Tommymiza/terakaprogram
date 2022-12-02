@@ -1,0 +1,36 @@
+#footer {
+  background: #1b272c;
+  padding-top: 50px;
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    & > div {
+      min-width: 300px;
+      color: #ccc;
+      &:nth-child(2){
+        margin-bottom: 20px;
+      }
+      h5 {
+        margin: 20px 0 0 0;
+      }
+      a {
+        color: var(--theme);
+      }
+    }
+  }
+  & > div:nth-child(2) {
+    margin-top: 20px;
+    padding: 10px;
+    color: #ccc;
+    background: #162024;
+    p {
+      cursor: pointer;
+    }
+    p:hover {
+      color: white;
+    }
+  }
+}

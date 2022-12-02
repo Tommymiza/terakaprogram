@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/navbar.scss";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import { Divider } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50 && document.querySelector("header")) {
+        document.querySelector("header").style.transform = "translateY(-200px)";
+      } else {
+        document.querySelector("header").style.transform = "translateY(0)";
+      }
+    });
+  }, []);
   return (
     <header>
       <nav>
