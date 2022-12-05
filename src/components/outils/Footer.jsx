@@ -7,7 +7,7 @@ const Footer = () => {
     <div id="footer">
       <div>
         <img
-          src="/images/Logo.png"
+          src="/images/logo.png"
           alt="logo"
           style={{ width: "200px", objectFit: "contain", marginBottom: "20px" }}
         />

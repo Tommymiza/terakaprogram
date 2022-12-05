@@ -47,7 +47,7 @@ const IndexProg = () => {
         link: "valeurs",
       },
     ];
-  });
+  }, []);
   return (
     <div id="programme">
       {prog.map((item, index) => (
