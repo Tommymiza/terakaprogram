@@ -47,8 +47,8 @@ const Home = () => {
               Objectifs de Développement Durable (ODD) des Nations Unies
             </p>
             <div>
-              <button onClick={() => navigate("/program")}>Programme</button>
-              <button onClick={() => navigate("/engage")}>S'engager</button>
+              <button className="custom" onClick={() => navigate("/program")}>Programme</button>
+              <button className="custom" onClick={() => navigate("/engage")}>S'engager</button>
             </div>
           </div>
         </div>
