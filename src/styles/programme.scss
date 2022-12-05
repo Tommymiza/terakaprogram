@@ -20,6 +20,7 @@
         height: 100%;
         object-fit: cover;
         transition: 0.4s;
+        z-index: -1;
     }
     div{
         position: absolute;
