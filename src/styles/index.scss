@@ -41,4 +41,14 @@ button.custom {
 :root {
   --btnColor: #783719;
   --theme: #88ab32;
+  --footer: #162024;
+}
+.title{
+  width: fit-content;
+  h3{
+    background: var(--footer);
+    width: fit-content;
+    color: white;
+    padding: 10px 20px 10px 50px;
+  }
 }
