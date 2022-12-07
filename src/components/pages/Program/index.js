@@ -1,11 +1,20 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../styles/programme.scss";
+import { ActContext } from "../../../App"
 
 const IndexProg = () => {
   const navigate = useNavigate();
+  const {width} = useContext(ActContext)
   const prog = useMemo(() => {
     return [
+      {
+        title: "Valeurs TERAKA",
+        content:
+          "Tous les membres de TERAKA, où qu'ils habitent, suivent les valeurs TIST. Ces valeurs sont essentielles au succès du programme...",
+        img: "prog6.jpg",
+        link: "valeurs",
+      },
       {
         title: "Modèle de boisement/reboisement",
         content:
@@ -39,34 +48,32 @@ const IndexProg = () => {
         img: "prog5.jpg",
         link: "monitoring",
       },
-      {
-        title: "Valeurs TERAKA",
-        content:
-          "Tous les membres de TERAKA, où qu'ils habitent, suivent les valeurs TIST. Ces valeurs sont essentielles au succès du programme...",
-        img: "prog6.jpg",
-        link: "valeurs",
-      },
     ];
   }, []);
   return (
-    <div id="programme">
-      {prog.map((item, index) => (
-        <div className="card" key={index}>
-          <h3>{item.title}</h3>
-          <img src={"/images/" + item.img} alt={item.link} loading="lazy" />
-          <div>
-            <p>{item.content}</p>
-            <button
-              onClick={() => {
-                navigate("/program/" + item.link);
-              }}
-            >
-              En savoir plus
-            </button>
+    <>
+      <div id="progTitle">
+        <h1 style={{fontSize: width > 1000 ? "2rem": "1.5rem"}}>TERAKA est un programme certifié de reboisement communautaire et de développement durable</h1>
+      </div>
+      <div id="programme">
+        {prog.map((item, index) => (
+          <div className="card" key={index}>
+            <h3>{item.title}</h3>
+            <img src={"/images/" + item.img} alt={item.link} loading="lazy" />
+            <div>
+              <p>{item.content}</p>
+              <button
+                onClick={() => {
+                  navigate("/program/" + item.link);
+                }}
+              >
+                En savoir plus
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 

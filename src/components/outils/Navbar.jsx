@@ -33,7 +33,7 @@ const Navbar = () => {
         document.querySelector("header").style.background = "white";
       } else {
         document.querySelector("header").style.background =
-          "rgba(255,255,255,0.4)";
+          "rgba(255,255,255,0.6)";
       }
     }
   }, [hover]);
@@ -43,7 +43,7 @@ const Navbar = () => {
         document.querySelector("header").style.background = "white";
       } else {
         document.querySelector("header").style.background =
-          "rgba(255,255,255,0.4)";
+          "rgba(255,255,255,0.6)";
       }
     });
     window.addEventListener("resize", () => {
@@ -77,7 +77,11 @@ const Navbar = () => {
               <li>
                 <NavLink to={"/program"}>Programme</NavLink>{" "}
                 <KeyboardArrowDown />
-                <ul>
+                <ul style={{ width: "230px" }}>
+                  <li>
+                    <NavLink to={"/program/valeurs"}>Valeurs TERAKA</NavLink>
+                  </li>
+                  <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
                     <NavLink to={"/program/reboisement"}>
                       Modèle de boisement/reboisement
@@ -105,10 +109,6 @@ const Navbar = () => {
                       Monitoring, rapportage et vérification
                     </NavLink>
                   </li>
-                  <Divider sx={{ width: "100%" }} color="grey"></Divider>
-                  <li>
-                    <NavLink to={"/program/valeurs"}>Valeurs TERAKA</NavLink>
-                  </li>
                 </ul>
               </li>
               <li>
@@ -133,7 +133,7 @@ const Navbar = () => {
               <li>
                 <NavLink to={"/engage"}>S'engager</NavLink>{" "}
                 <KeyboardArrowDown />
-                <ul>
+                <ul style={{ width: "230px" }}>
                   <li>
                     <NavLink to={"/engage/professionnel"}>
                       Partenariat professionnel
@@ -160,7 +160,7 @@ const Navbar = () => {
                 <button
                   className="nav-btn"
                   onClick={() => navigate("/contact")}
-                  style={{fontSize: "14px"}}
+                  style={{ fontSize: "14px" }}
                 >
                   Contactez-nous
                 </button>
@@ -181,7 +181,7 @@ const Navbar = () => {
               <button
                 className="nav-btn"
                 onClick={() => navigate("/contact")}
-                style={{fontSize: width < 400 ? "12px" : "14px"}}
+                style={{ fontSize: width < 400 ? "12px" : "14px" }}
               >
                 Contactez-nous
               </button>
@@ -234,6 +234,15 @@ const Navbar = () => {
                       <ul>
                         <li>
                           <NavLink
+                            to={"/program/valeurs"}
+                            onClick={handleClose}
+                          >
+                            Valeurs TERAKA
+                          </NavLink>
+                        </li>
+                        <Divider sx={{ width: "100%" }} color="grey"></Divider>
+                        <li>
+                          <NavLink
                             to={"/program/reboisement"}
                             onClick={handleClose}
                           >
@@ -274,15 +283,6 @@ const Navbar = () => {
                             onClick={handleClose}
                           >
                             Monitoring, rapportage et vérification
-                          </NavLink>
-                        </li>
-                        <Divider sx={{ width: "100%" }} color="grey"></Divider>
-                        <li>
-                          <NavLink
-                            to={"/program/valeurs"}
-                            onClick={handleClose}
-                          >
-                            Valeurs TERAKA
                           </NavLink>
                         </li>
                       </ul>
@@ -397,22 +397,28 @@ const Navbar = () => {
       <div
         style={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: "column",
           justifyContent: "space-between",
-          width: "calc(100% - 40px)",
           alignItems: "center",
           margin: "0px 20px",
+          gap: "20px",
           flexWrap: "nowrap",
           background: "transparent",
           position: "fixed",
           top: "140px",
-          zIndex: "2"
+          zIndex: "2",
         }}
       >
-        <button className="nav-btn" style={{fontSize: width < 400 ? "12px" : "14px"}}>
+        <button
+          className="nav-btn"
+          style={{ fontSize: "14px", width: "170px" }}
+        >
           Rejoindre TERAKA
         </button>
-        <button className="nav-btn" style={{fontSize: width < 400 ? "12px" : "14px"}}>
+        <button
+          className="nav-btn"
+          style={{ fontSize: "14px", width: "170px" }}
+        >
           Centre de formation
         </button>
       </div>

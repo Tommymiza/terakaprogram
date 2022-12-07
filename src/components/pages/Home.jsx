@@ -38,7 +38,7 @@ const Home = () => {
     <section>
       <div id="homeTitle">
         <div id="contentTitle">
-          <h1 style={{fontSize: width > 1000 ? "8.5rem" : "4rem"}}>
+          <h1 style={{fontSize: width > 1000 ? "5rem" : "3rem"}}>
             Teraka
           </h1>
           <p>
@@ -46,7 +46,7 @@ const Home = () => {
             Objectifs de Développement Durable (ODD) des Nations Unies
           </p>
           <div>
-            <button className="nav-btn" onClick={() => navigate("/program")} style={{fontSize: "20px"}}>
+            <button className="marron-btn" onClick={() => navigate("/program")} style={{fontSize: "20px"}}>
               Programme
             </button>
             <button className="nav-btn" onClick={() => navigate("/engage")} style={{fontSize: "20px"}}>
