@@ -57,10 +57,11 @@ const Navbar = () => {
         onMouseLeave={() => setHover(false)}
       >
         <nav>
-          <div>
+          <div style={{cursor: "pointer"}}>
             <img
               src="/images/logo.png"
               alt=""
+              onClick={()=>navigate("/")}
               style={{
                 height: "100px",
                 objectFit: "contain",
