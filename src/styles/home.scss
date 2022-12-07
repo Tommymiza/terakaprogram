@@ -11,46 +11,39 @@
   color: white;
   #contentTitle {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    div:nth-child(2) {
-      width: 60%;
+    justify-content: center;
+    gap: 20px;
+    width: calc(100% - 20px);
+    padding: 150px 20px;
+    max-height: 20vh;
+    h1{
+      width: fit-content;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: 900;
+    }
+    p{
+      width: fit-content;
+      padding: 10px 20px;
+    }
+    div{
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      h1 {
-        font-size: 35px;
-        word-spacing: 11px;
-        text-shadow: 2px 2px 20px black;
-        margin-right: 100px;
-      }
-      p {
-        font-size: 20px;
-        margin-right: 100px;
-        word-spacing: 11px;
-        text-shadow: 2px 2px 20px black;
-      }
-      div {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-        width: 80%;
-        margin-top: 50px;
-        button:nth-child(2) {
-          margin-right: 150px;
-        }
-      }
+      gap: 50px;
+      margin: 50px 0px;
     }
   }
   #homeNb {
-    margin-top: 150px;
-    margin-bottom: 50px;
-    width: 100%;
+    margin-top: 20px;
+    padding: 50px 10px;
+    width: calc(100% - 20px);
+    background: #ebf1f4;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -61,46 +54,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
-  }
-}
-@media screen and (max-width: 1050px) {
-  #homeTitle {
-    div:nth-child(1) {
-      display: none;
-    }
-    #contentTitle {
-      padding-right: 40px;
-      padding-left: 40px;
-      div:nth-child(2) {
-        width: 100%;
-        h1 {
-          margin: 0;
-          word-spacing: normal;
-        }
-        p {
-          margin: 0;
-          word-spacing: normal;
-        }
-        div {
-          width: 100%;
-          button:nth-child(2) {
-            margin: 0;
-          }
-        }
-      }
-    }
-    #homeNb {
-      padding-left: 40px;
-      padding-right: 40px;
-      width: calc(100% - 80px);
-    }
-  }
-}
-@media screen and (max-width: 500px) {
-  #homeTitle #contentTitle div:nth-child(2) {
-    h1 {
-      font-size: 25px;
+      color: var(--theme);
     }
   }
 }

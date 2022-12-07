@@ -67,19 +67,6 @@ const Navbar = () => {
               }}
             />
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              gap: "20px",
-              margin: "0px 20px", 
-              flexWrap: "wrap" 
-            }}
-          >
-            <button className="nav-btn" style={{width: "160px"}}>Rejoindre TERAKA</button>
-            <button className="nav-btn" style={{width: "160px"}}>Centre de formation</button>
-          </div>
           {width > 1280 ? (
             <ul id="principale">
               <li>
@@ -173,7 +160,7 @@ const Navbar = () => {
                 <button
                   className="nav-btn"
                   onClick={() => navigate("/contact")}
-                  style={{width: "130px"}}
+                  style={{fontSize: "14px"}}
                 >
                   Contactez-nous
                 </button>
@@ -183,15 +170,19 @@ const Navbar = () => {
             <div
               style={{
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: "row-reverse",
                 alignItems: "center",
-                flexWrap: "wrap"
+                flexWrap: "wrap",
               }}
             >
               <IconButton size="medium" onClick={() => setOpen(true)}>
                 <MenuRounded htmlColor="#133A32" fontSize="large" />
               </IconButton>
-              <button className="nav-btn" onClick={() => navigate("/contact")} style={{width: "130px"}}>
+              <button
+                className="nav-btn"
+                onClick={() => navigate("/contact")}
+                style={{fontSize: width < 400 ? "12px" : "14px"}}
+              >
                 Contactez-nous
               </button>
               <Drawer
@@ -233,7 +224,7 @@ const Navbar = () => {
                       sx={{
                         cursor: "pointer",
                         "&:hover": {
-                          color: "#87ab32",
+                          color: "var(--active)",
                         },
                       }}
                     />
@@ -312,7 +303,7 @@ const Navbar = () => {
                       sx={{
                         cursor: "pointer",
                         "&:hover": {
-                          color: "#87ab32",
+                          color: "var(--active)",
                         },
                       }}
                     />
@@ -355,7 +346,7 @@ const Navbar = () => {
                       sx={{
                         cursor: "pointer",
                         "&:hover": {
-                          color: "#87ab32",
+                          color: "var(--active)",
                         },
                       }}
                     />
@@ -403,6 +394,28 @@ const Navbar = () => {
           )}
         </nav>
       </header>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          width: "calc(100% - 40px)",
+          alignItems: "center",
+          margin: "0px 20px",
+          flexWrap: "nowrap",
+          background: "transparent",
+          position: "fixed",
+          top: "140px",
+          zIndex: "2"
+        }}
+      >
+        <button className="nav-btn" style={{fontSize: width < 400 ? "12px" : "14px"}}>
+          Rejoindre TERAKA
+        </button>
+        <button className="nav-btn" style={{fontSize: width < 400 ? "12px" : "14px"}}>
+          Centre de formation
+        </button>
+      </div>
     </>
   );
 };

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../../styles/home.scss";
 import { useNavigate } from "react-router-dom";
+import { ActContext } from "../../App";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ const Home = () => {
   const [people, setPeople] = useState(0);
   const [espece, setEspece] = useState(0);
   const [tree, setTree] = useState(0);
+  const {width} = useContext(ActContext)
   useEffect(() => {
     var initialS = 0;
     var initialP = 0;
@@ -36,20 +38,20 @@ const Home = () => {
     <section>
       <div id="homeTitle">
         <div id="contentTitle">
-          <div></div>
+          <h1 style={{fontSize: width > 1000 ? "8.5rem" : "4rem"}}>
+            Teraka
+          </h1>
+          <p>
+            Basé sur un modèle primé internationalement, TERAKA contribue aux
+            Objectifs de Développement Durable (ODD) des Nations Unies
+          </p>
           <div>
-            <h1>
-              TERAKA est un programme certifié de boisement/reboisement mené par
-              des petits groupes d’agriculteurs à Madagascar
-            </h1>
-            <p>
-              Basé sur un modèle primé internationalement, TERAKA contribue aux
-              Objectifs de Développement Durable (ODD) des Nations Unies
-            </p>
-            <div>
-              <button className="custom" onClick={() => navigate("/program")}>Programme</button>
-              <button className="custom" onClick={() => navigate("/engage")}>S'engager</button>
-            </div>
+            <button className="nav-btn" onClick={() => navigate("/program")} style={{fontSize: "20px"}}>
+              Programme
+            </button>
+            <button className="nav-btn" onClick={() => navigate("/engage")} style={{fontSize: "20px"}}>
+              S'engager
+            </button>
           </div>
         </div>
         <div id="homeNb">

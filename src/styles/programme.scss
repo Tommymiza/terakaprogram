@@ -1,18 +1,12 @@
 #programme {
-  background-image: url("../../public/images/fond1.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 250px 5% 20px 5%;
-  gap: 40px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  column-gap: 20px;
   align-items: center;
+  row-gap: 10px;
+  padding: 250px 5% 20px 5%;
   .card {
-    width: 30%;
-    height: 300px;
-    min-width: 300px;
+    height: 250px;
     overflow: hidden;
     position: relative;
     img{
@@ -26,7 +20,7 @@
         position: absolute;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         gap: 15px;
         padding: 20px;

@@ -22,26 +22,24 @@
 body {
   overflow-x: hidden;
 }
-button.custom {
-  background: rgba(120, 55, 25, 0.5);
-  backdrop-filter: blur(3px);
-  border: none;
-  padding: 15px;
-  font-size: 18px;
-  border-radius: 7px;
-  box-shadow: 0 0 7px black;
+.nav-btn {
   color: white;
+  font-weight: bolder;
+  padding: 10px 15px;
+  background: var(--active);
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.5s;
   &:hover {
-    background: var(--btnColor);
-    transform: scale(1.05);
+    background: var(--theme);
   }
 }
 :root {
   --btnColor: #783719;
   --theme: #133A32;
   --footer: #162024;
+  --active: #87ab32;
 }
 .title{
   width: fit-content;
