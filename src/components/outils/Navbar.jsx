@@ -8,9 +8,12 @@ import {
 } from "@mui/icons-material";
 import { Divider, IconButton, Drawer } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { width } = useContext(ActContext);
+  const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
   const [state, setState] = useState(null);
   const handleClose = () => {
@@ -25,11 +28,22 @@ const Navbar = () => {
     setState(e);
   }
   useEffect(() => {
+    if (window.scrollY <= 50) {
+      if (hover) {
+        document.querySelector("header").style.background = "white";
+      } else {
+        document.querySelector("header").style.background =
+          "rgba(255,255,255,0.4)";
+      }
+    }
+  }, [hover]);
+  useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50 && document.querySelector("header")) {
-        document.querySelector("header").style.transform = "translateY(-200px)";
+        document.querySelector("header").style.background = "white";
       } else {
-        document.querySelector("header").style.transform = "translateY(0)";
+        document.querySelector("header").style.background =
+          "rgba(255,255,255,0.4)";
       }
     });
     window.addEventListener("resize", () => {
@@ -38,7 +52,10 @@ const Navbar = () => {
   }, []);
   return (
     <>
-      <header>
+      <header
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
         <nav>
           <div>
             <img
@@ -50,7 +67,20 @@ const Navbar = () => {
               }}
             />
           </div>
-          {width > 1050 ? (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "20px",
+              margin: "0px 20px", 
+              flexWrap: "wrap" 
+            }}
+          >
+            <button className="nav-btn" style={{width: "160px"}}>Rejoindre TERAKA</button>
+            <button className="nav-btn" style={{width: "160px"}}>Centre de formation</button>
+          </div>
+          {width > 1280 ? (
             <ul id="principale">
               <li>
                 <NavLink to={"/"} end>
@@ -140,14 +170,30 @@ const Navbar = () => {
                 <NavLink to={"/news"}>News</NavLink>
               </li>
               <li>
-                <NavLink to={"/contact"}>Contact</NavLink>
+                <button
+                  className="nav-btn"
+                  onClick={() => navigate("/contact")}
+                  style={{width: "130px"}}
+                >
+                  Contactez-nous
+                </button>
               </li>
             </ul>
           ) : (
-            <div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                flexWrap: "wrap"
+              }}
+            >
               <IconButton size="medium" onClick={() => setOpen(true)}>
-                <MenuRounded htmlColor="#fff" fontSize="large" />
+                <MenuRounded htmlColor="#133A32" fontSize="large" />
               </IconButton>
+              <button className="nav-btn" onClick={() => navigate("/contact")} style={{width: "130px"}}>
+                Contactez-nous
+              </button>
               <Drawer
                 open={open}
                 anchor={"right"}
@@ -156,7 +202,7 @@ const Navbar = () => {
                   style: {
                     width: "calc(100% - 40px)",
                     maxWidth: "340px",
-                    background: "#162024",
+                    background: "#fff",
                     padding: "20px",
                     height: "calc(100% - 40px)",
                   },
@@ -169,7 +215,7 @@ const Navbar = () => {
                     }}
                   >
                     <IconButton onClick={handleClose}>
-                      <CloseRounded htmlColor="#fff" fontSize="large" />
+                      <CloseRounded htmlColor="#133A32" fontSize="large" />
                     </IconButton>
                   </li>
                   <li>
@@ -183,11 +229,11 @@ const Navbar = () => {
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(0)}
-                      htmlColor="#fff"
+                      htmlColor="#133A32"
                       sx={{
                         cursor: "pointer",
                         "&:hover": {
-                          color: "var(--theme)",
+                          color: "#87ab32",
                         },
                       }}
                     />
@@ -262,11 +308,11 @@ const Navbar = () => {
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(1)}
-                      htmlColor="#fff"
+                      htmlColor="#133A32"
                       sx={{
                         cursor: "pointer",
                         "&:hover": {
-                          color: "var(--theme)",
+                          color: "#87ab32",
                         },
                       }}
                     />
@@ -305,11 +351,11 @@ const Navbar = () => {
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(2)}
-                      htmlColor="#fff"
+                      htmlColor="#133A32"
                       sx={{
                         cursor: "pointer",
                         "&:hover": {
-                          color: "var(--theme)",
+                          color: "#87ab32",
                         },
                       }}
                     />
@@ -349,11 +395,6 @@ const Navbar = () => {
                   <li>
                     <NavLink to={"/news"} onClick={handleClose}>
                       News
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to={"/contact"} onClick={handleClose}>
-                      Contact
                     </NavLink>
                   </li>
                 </ul>
