@@ -9,25 +9,26 @@
   h1 {
     width: fit-content;
     padding: 10px 20px;
-    text-align: justify;
+    text-align: center;
     letter-spacing: 2px;
     font-weight: bolder;
     color: var(--theme);
+    max-width: 1000px;
   }
 }
 
 #programme {
   background: #ebf1f4;
   display: grid;
-  grid-template-columns: repeat(3,300px);
+  grid-template-columns: repeat(6, 230px);
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   row-gap: 10px;
   padding: 50px 5% 50px 5%;
   justify-content: center;
   .card {
-    height: 300px;
-    width: 300px;
+    height: 230px;
+    width: 230px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 0 15px black;
@@ -94,8 +95,13 @@
     }
   }
 }
-@media screen and (max-width: 1080px) {
-    #programme{
-        grid-template-columns: repeat(auto-fill, 300px);
-    }
+@media screen and (max-width: 1500px) {
+  #programme {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  #programme {
+    grid-template-columns: repeat(auto-fill, 230px);
+  }
 }
