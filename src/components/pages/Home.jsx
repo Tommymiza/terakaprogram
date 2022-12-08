@@ -12,6 +12,7 @@ const Home = () => {
   const { width } = useContext(ActContext);
   const video = useRef(null);
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
     video.current?.play().catch((err) => {
       console.log("cannot play video", err);
     });
