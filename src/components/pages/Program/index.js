@@ -1,11 +1,18 @@
-import React, { useMemo, useContext } from "react";
+import React, { useMemo, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../styles/programme.scss";
-import { ActContext } from "../../../App"
+import { ActContext } from "../../../App";
+import Valeur from "./Valeur";
+import { useLocation } from "react-router-dom";
+import Reboisement from "./Reboisement";
+import Formation from "./Formation";
+import Gouvernance from "./Gouvernance";
+import Fertilisation from "./Fertilisation";
+import Monitoring from "./Monitoring";
 
 const IndexProg = () => {
   const navigate = useNavigate();
-  const {width} = useContext(ActContext)
+  const { width } = useContext(ActContext);
   const prog = useMemo(() => {
     return [
       {
@@ -50,10 +57,21 @@ const IndexProg = () => {
       },
     ];
   }, []);
+  const state = useLocation();
+  useEffect(() => {
+    if (state.state !== null) {
+      document.getElementById(state.state.param)?.scrollIntoView({behavior: "smooth"})
+    } else {
+      window.scrollTo({ top: 0, left: 0 });
+    }
+  }, [state]);
   return (
     <>
       <div id="progTitle">
-        <h1 style={{fontSize: width > 1000 ? "2rem": "1.5rem"}}>TERAKA est un programme certifié de reboisement communautaire et de développement durable</h1>
+        <h1 style={{ fontSize: width > 1000 ? "2rem" : "1.5rem" }}>
+          TERAKA est un programme certifié de reboisement communautaire et de
+          développement durable
+        </h1>
       </div>
       <div id="programme">
         {prog.map((item, index) => (
@@ -64,7 +82,7 @@ const IndexProg = () => {
               <p>{item.content}</p>
               <button
                 onClick={() => {
-                  navigate("/program/" + item.link);
+                  navigate("/program", {state: {param: item.link}});
                 }}
               >
                 En savoir plus
@@ -72,6 +90,24 @@ const IndexProg = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div id="valeurs">
+        <Valeur />
+      </div>
+      <div id="reboisement" style={{backgroundColor: "#ebf1f4"}}>
+        <Reboisement />
+      </div>
+      <div id="formation">
+        <Formation />
+      </div>
+      <div id="leadership" style={{backgroundColor: "#ebf1f4"}}>
+        <Gouvernance />
+      </div>
+      <div id="fertilisation">
+        <Fertilisation />
+      </div>
+      <div id="monitoring" style={{backgroundColor: "#ebf1f4"}}>
+        <Monitoring />
       </div>
     </>
   );

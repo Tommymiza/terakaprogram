@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import "../../styles/home.scss";
 import { useNavigate } from "react-router-dom";
 import { ActContext } from "../../App";
@@ -9,8 +9,12 @@ const Home = () => {
   const [people, setPeople] = useState(0);
   const [espece, setEspece] = useState(0);
   const [tree, setTree] = useState(0);
-  const {width} = useContext(ActContext)
+  const { width } = useContext(ActContext);
+  const video = useRef(null);
   useEffect(() => {
+    video.current?.play().catch((err) => {
+      console.log("cannot play video", err);
+    });
     var initialS = 0;
     var initialP = 0;
     var initialE = 0;
@@ -37,19 +41,36 @@ const Home = () => {
   return (
     <section>
       <div id="homeTitle">
+        {width >= 800 && (
+          <video
+            onCanPlay={() => video.current?.play()}
+            playsInline
+            muted
+            alt="background"
+            loop={true}
+            src={"/images/fond.mp4"}
+            ref={video}
+          />
+        )}
         <div id="contentTitle">
-          <h1 style={{fontSize: width > 1000 ? "5rem" : "3rem"}}>
-            Teraka
-          </h1>
+          <h1 style={{ fontSize: width > 1000 ? "5rem" : "3rem" }}>Teraka</h1>
           <p>
             Basé sur un modèle primé internationalement, TERAKA contribue aux
             Objectifs de Développement Durable (ODD) des Nations Unies
           </p>
           <div>
-            <button className="nav-btn" onClick={() => navigate("/program")} style={{fontSize: "20px"}}>
+            <button
+              className="nav-btn"
+              onClick={() => navigate("/program")}
+              style={{ fontSize: "20px" }}
+            >
               Programme
             </button>
-            <button className="nav-btn" onClick={() => navigate("/engage")} style={{fontSize: "20px"}}>
+            <button
+              className="nav-btn"
+              onClick={() => navigate("/engage")}
+              style={{ fontSize: "20px" }}
+            >
               S'engager
             </button>
           </div>

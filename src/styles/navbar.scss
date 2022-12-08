@@ -43,13 +43,13 @@
       min-width: 100px;
       color: var(--theme);
       li {
-        a {
+        p {
           text-decoration: none;
           color: var(--theme);
         }
         padding: 10px;
         &:hover {
-          a {
+          p {
             color: #87ab32;
           }
         }
@@ -86,8 +86,12 @@
       font-size: 17px;
       & > li {
         margin: 5px 0;
-        a {
+        p {
+          cursor: pointer;
           color: var(--theme);
+        }
+        p:hover{
+          color: var(--active);
         }
       }
     }

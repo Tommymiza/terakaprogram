@@ -16,10 +16,10 @@ const Navbar = () => {
   const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
   const [state, setState] = useState(null);
-  const handleClose = () => {
+  function handleClose() {
     setOpen(false);
     setState(null);
-  };
+  }
   function handleClick(e) {
     if (state === e) {
       setState(null);
@@ -57,11 +57,11 @@ const Navbar = () => {
         onMouseLeave={() => setHover(false)}
       >
         <nav>
-          <div style={{cursor: "pointer"}}>
+          <div style={{ cursor: "pointer" }}>
             <img
               src="/images/logo.png"
               alt=""
-              onClick={()=>navigate("/")}
+              onClick={() => navigate("/")}
               style={{
                 height: "100px",
                 objectFit: "contain",
@@ -80,35 +80,67 @@ const Navbar = () => {
                 <KeyboardArrowDown />
                 <ul style={{ width: "230px" }}>
                   <li>
-                    <NavLink to={"/program/valeurs"}>Valeurs TERAKA</NavLink>
+                    <p
+                      onClick={() =>
+                        navigate("/program", { state: { param: "valeurs" } })
+                      }
+                    >
+                      Valeurs TERAKA
+                    </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
-                    <NavLink to={"/program/reboisement"}>
+                    <p
+                      onClick={() =>
+                        navigate("/program", {
+                          state: { param: "reboisement" },
+                        })
+                      }
+                    >
                       Modèle de boisement/reboisement
-                    </NavLink>
+                    </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
-                    <NavLink to={"/program/formation"}>Formation</NavLink>
+                    <p
+                      onClick={() =>
+                        navigate("/program", { state: { param: "formation" } })
+                      }
+                    >
+                      Formation
+                    </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
-                    <NavLink to={"/program/leadership"}>
+                    <p
+                      onClick={() =>
+                        navigate("/program", { state: { param: "leadership" } })
+                      }
+                    >
                       Gouvernance et Leadership
-                    </NavLink>
+                    </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
-                    <NavLink to={"/program/fertilisation"}>
+                    <p
+                      onClick={() =>
+                        navigate("/program", {
+                          state: { param: "fertilisation" },
+                        })
+                      }
+                    >
                       Fertilisation croisée
-                    </NavLink>
+                    </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
-                    <NavLink to={"/program/monitoring"}>
+                    <p
+                      onClick={() =>
+                        navigate("/program", { state: { param: "monitoring" } })
+                      }
+                    >
                       Monitoring, rapportage et vérification
-                    </NavLink>
+                    </p>
                   </li>
                 </ul>
               </li>
@@ -120,11 +152,23 @@ const Navbar = () => {
                 <KeyboardArrowDown />
                 <ul>
                   <li>
-                    <NavLink to={"/certification/vcs"}>VCS</NavLink>
+                    <p
+                      onClick={() =>
+                        navigate("/certification", { state: { param: "vcs" } })
+                      }
+                    >
+                      VCS
+                    </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
-                    <NavLink to={"/certification/ccb"}>CCB</NavLink>
+                    <p
+                      onClick={() =>
+                        navigate("/certification", { state: { param: "ccb" } })
+                      }
+                    >
+                      CCB
+                    </p>
                   </li>
                 </ul>
               </li>
@@ -136,21 +180,39 @@ const Navbar = () => {
                 <KeyboardArrowDown />
                 <ul style={{ width: "230px" }}>
                   <li>
-                    <NavLink to={"/engage/professionnel"}>
+                    <p
+                      onClick={() =>
+                        navigate("/engage", {
+                          state: { param: "professionel" },
+                        })
+                      }
+                    >
                       Partenariat professionnel
-                    </NavLink>
+                    </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
-                    <NavLink to={"/engage/philanthropique"}>
+                    <p
+                      onClick={() =>
+                        navigate("/engage", {
+                          state: { param: "philanthropique" },
+                        })
+                      }
+                    >
                       Partenariat philanthropique
-                    </NavLink>
+                    </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
                   <li>
-                    <NavLink to={"/engage/contribution"}>
+                    <p
+                      onClick={() =>
+                        navigate("/engage", {
+                          state: { param: "contribution" },
+                        })
+                      }
+                    >
                       Contribution individuelle
-                    </NavLink>
+                    </p>
                   </li>
                 </ul>
               </li>
@@ -234,57 +296,81 @@ const Navbar = () => {
                     <li>
                       <ul>
                         <li>
-                          <NavLink
-                            to={"/program/valeurs"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/program", {
+                                state: { param: "valeurs" },
+                              });
+                            }}
                           >
                             Valeurs TERAKA
-                          </NavLink>
+                          </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
                         <li>
-                          <NavLink
-                            to={"/program/reboisement"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/program", {
+                                state: { param: "reboisement" },
+                              });
+                            }}
                           >
                             Modèle de boisement/reboisement
-                          </NavLink>
+                          </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
                         <li>
-                          <NavLink
-                            to={"/program/formation"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/program", {
+                                state: { param: "formation" },
+                              });
+                            }}
                           >
                             Formation
-                          </NavLink>
+                          </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
                         <li>
-                          <NavLink
-                            to={"/program/leadership"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/program", {
+                                state: { param: "leadership" },
+                              });
+                            }}
                           >
                             Gouvernance et Leadership
-                          </NavLink>
+                          </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
                         <li>
-                          <NavLink
-                            to={"/program/fertilisation"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/program", {
+                                state: { param: "fertilisation" },
+                              });
+                            }}
                           >
                             Fertilisation croisée
-                          </NavLink>
+                          </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
                         <li>
-                          <NavLink
-                            to={"/program/monitoring"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/program", {
+                                state: { param: "monitoring" },
+                              });
+                            }}
                           >
                             Monitoring, rapportage et vérification
-                          </NavLink>
+                          </p>
                         </li>
                       </ul>
                     </li>
@@ -313,21 +399,29 @@ const Navbar = () => {
                     <li>
                       <ul>
                         <li>
-                          <NavLink
-                            to={"/certification/vcs"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/certification", {
+                                state: { param: "vcs" },
+                              });
+                            }}
                           >
                             VCS
-                          </NavLink>
+                          </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
                         <li>
-                          <NavLink
-                            to={"/certification/ccb"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/certification", {
+                                state: { param: "ccb" },
+                              });
+                            }}
                           >
                             CCB
-                          </NavLink>
+                          </p>
                         </li>
                       </ul>
                     </li>
@@ -356,30 +450,42 @@ const Navbar = () => {
                     <li>
                       <ul>
                         <li>
-                          <NavLink
-                            to={"/engage/professionnel"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/engage", {
+                                state: { param: "professionnel" },
+                              });
+                            }}
                           >
                             Partenariat professionnel
-                          </NavLink>
+                          </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
                         <li>
-                          <NavLink
-                            to={"/engage/philanthropique"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/engage", {
+                                state: { param: "philanthropique" },
+                              });
+                            }}
                           >
                             Partenariat philanthropique
-                          </NavLink>
+                          </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
                         <li>
-                          <NavLink
-                            to={"/engage/contribution"}
-                            onClick={handleClose}
+                          <p
+                            onClick={() => {
+                              handleClose();
+                              navigate("/engage", {
+                                state: { param: "contribution" },
+                              });
+                            }}
                           >
                             Contribution individuelle
-                          </NavLink>
+                          </p>
                         </li>
                       </ul>
                     </li>
