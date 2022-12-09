@@ -50,7 +50,7 @@
         padding: 10px;
         &:hover {
           p {
-            color: #87ab32;
+            color: var(--active);
           }
         }
       }
