@@ -3,7 +3,7 @@ import React from "react";
 export default function Ccb() {
   return (
     <div className="col-content">
-      <h2>CCB</h2>
+      <img src="/images/ccb.png" alt="ccb" />
       <p>
         <span>
           Le Standard CCB garantit que les projets ont été mis en œuvre en
@@ -15,7 +15,6 @@ export default function Ccb() {
         des crédits carbone tout en présentant des bénéfices supplémentaires
         au-delà de l&#39;atténuation des émissions de carbone.
       </p>
-      <img src="/images/ccb.png" alt="ccb" />
     </div>
   );
 }

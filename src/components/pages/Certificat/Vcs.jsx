@@ -3,7 +3,7 @@ import React from "react";
 export default function Vcs() {
   return (
     <div className="col-content">
-      <h2>VCS</h2>
+      <img src="/images/vcs.png" alt="vcs" />
       <p>
         <span>
           Le Standard VCS est le label de certification carbone le plus utilisé
@@ -21,7 +21,6 @@ export default function Vcs() {
         générées par les projets sont vérifiées de manière indépendante et que
         celles-ci sont réelles, quantifiables, additionnelles et permanentes.
       </p>
-      <img src="/images/vcs.png" alt="vcs" />
     </div>
   );
 }
