@@ -60,9 +60,7 @@ const IndexProg = () => {
   const state = useLocation();
   useEffect(() => {
     if (state.state !== null) {
-      document
-        .getElementById(state.state.param)
-        ?.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({top: document.getElementById(state.state.param).offsetTop - 60 , behavior: "smooth"})
     } else {
       window.scrollTo({ top: 0, left: 0 });
     }
@@ -75,7 +73,7 @@ const IndexProg = () => {
           développement durable
         </h1>
       </div>
-      <div className="programme">
+      <div className="programme" style={{paddingTop: "50px"}}>
         {prog.map((item, index) => (
           <div className="card" key={index}>
             <h3>{item.title}</h3>
