@@ -73,7 +73,7 @@ const IndexProg = () => {
           développement durable
         </h1>
       </div>
-      <div id="programme">
+      <div className="programme">
         {prog.map((item, index) => (
           <div className="card" key={index}>
             <h3>{item.title}</h3>
