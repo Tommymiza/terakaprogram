@@ -1,7 +1,7 @@
-import React from "react";
-import "../../styles/odd.scss"
-import "../../styles/programme.scss"
-import "../../styles/certificat.scss"
+import React, { useEffect } from "react";
+import "../../styles/odd.scss";
+import "../../styles/programme.scss";
+import "../../styles/certificat.scss";
 
 const Odd = () => {
   const odds = [
@@ -74,6 +74,9 @@ const Odd = () => {
       text: "texte 17",
     },
   ];
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  }, []);
   return (
     <>
       <div id="odd">
@@ -87,8 +90,13 @@ const Odd = () => {
           individuelles.
         </p>
       </div>
-      <div className="col-content" style={{backgroundColor: "#ebf1f4", paddingTop: "50px"}}>
-        <h2 style={{fontSize: "25px"}}>TERAKA impacte les 17 ODD de l’ONU !</h2>
+      <div
+        className="col-content"
+        style={{ backgroundColor: "#ebf1f4", paddingTop: "50px" }}
+      >
+        <h2 style={{ fontSize: "25px" }}>
+          TERAKA impacte les 17 ODD de l’ONU !
+        </h2>
         <p>
           Même si nous ne prétendons pas atteindre pleinement les 17 objectifs
           de Développement durable des Nations Unies (ODD), nous y contribuons.
@@ -100,7 +108,10 @@ const Odd = () => {
         <div className="programme">
           {odds.map((item) => (
             <div className="card" key={item.id}>
-              <img src={"/images/odd" + item.id + ".png"} alt={"odd " + item.id} />
+              <img
+                src={"/images/odd" + item.id + ".png"}
+                alt={"odd " + item.id}
+              />
               <div>
                 <p>{item.text}</p>
                 <button>En savoir plus...</button>
@@ -108,8 +119,8 @@ const Odd = () => {
             </div>
           ))}
           <div className="card">
-              <img src={"/images/odd18.png"} alt={"odd 18"} />
-            </div>
+            <img src={"/images/odd18.png"} alt={"odd 18"} />
+          </div>
         </div>
       </div>
     </>

@@ -183,7 +183,7 @@ const Navbar = () => {
                     <p
                       onClick={() =>
                         navigate("/engage", {
-                          state: { param: "professionel" },
+                          state: { param: "professionnel" },
                         })
                       }
                     >

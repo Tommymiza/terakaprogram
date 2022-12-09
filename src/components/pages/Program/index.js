@@ -60,7 +60,9 @@ const IndexProg = () => {
   const state = useLocation();
   useEffect(() => {
     if (state.state !== null) {
-      document.getElementById(state.state.param)?.scrollIntoView({behavior: "smooth"})
+      document
+        .getElementById(state.state.param)
+        ?.scrollIntoView({ behavior: "smooth" });
     } else {
       window.scrollTo({ top: 0, left: 0 });
     }
@@ -82,7 +84,7 @@ const IndexProg = () => {
               <p>{item.content}</p>
               <button
                 onClick={() => {
-                  navigate("/program", {state: {param: item.link}});
+                  navigate("/program", { state: { param: item.link } });
                 }}
               >
                 En savoir plus
@@ -94,19 +96,19 @@ const IndexProg = () => {
       <div id="valeurs">
         <Valeur />
       </div>
-      <div id="reboisement" style={{backgroundColor: "#ebf1f4"}}>
+      <div id="reboisement" style={{ backgroundColor: "#ebf1f4" }}>
         <Reboisement />
       </div>
       <div id="formation">
         <Formation />
       </div>
-      <div id="leadership" style={{backgroundColor: "#ebf1f4"}}>
+      <div id="leadership" style={{ backgroundColor: "#ebf1f4" }}>
         <Gouvernance />
       </div>
       <div id="fertilisation">
         <Fertilisation />
       </div>
-      <div id="monitoring" style={{backgroundColor: "#ebf1f4"}}>
+      <div id="monitoring" style={{ backgroundColor: "#ebf1f4" }}>
         <Monitoring />
       </div>
     </>
