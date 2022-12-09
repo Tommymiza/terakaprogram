@@ -518,13 +518,13 @@ const Navbar = () => {
       >
         <button
           className="nav-btn"
-          style={{ fontSize: "14px", width: "170px" }}
+          style={{ fontSize: "12px", width: "170px" }}
         >
           Rejoindre TERAKA
         </button>
         <button
           className="nav-btn"
-          style={{ fontSize: "14px", width: "170px" }}
+          style={{ fontSize: "12px", width: "170px" }}
         >
           Centre de formation
         </button>

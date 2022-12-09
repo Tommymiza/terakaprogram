@@ -3,7 +3,7 @@ import React from "react";
 const Reboisement = () => {
   return (
     <div className="content">
-      <h2>Modèle de Boisement/Reboisement</h2>
+      <h2>Modèle de Boisement / Reboisement</h2>
       <div>
         <div>
           <h3 style={{ marginBottom: "10px" }}>
