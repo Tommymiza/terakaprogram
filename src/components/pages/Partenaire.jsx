@@ -18,7 +18,9 @@ const Partenaire = () => {
         </p>
       </div>
       <div>
-        <p></p>
+        <p>TERAKA collabore avec TIST et deux association locales: l’ASA et PARTAGE</p>
+        <p>A travers sa collaboration avec l’association ASA, TERAKA soutient la réinsertion….</p>
+        <img src="/images/tist.png" alt="tist logo" onClick={()=>{window.open('https://program.tist.org', '_blank')}} />
       </div>
     </div>
   );
