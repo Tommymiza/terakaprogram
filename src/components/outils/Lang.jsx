@@ -24,6 +24,7 @@ const Lang = () => {
   const handleChange = (e) => {
     i18n.changeLanguage(e.target.value);
     localStorage.setItem("lang", e.target.value);
+    document.documentElement.lang = i18n.language.substring(0,2)
   };
   return (
     <div>

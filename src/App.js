@@ -38,6 +38,7 @@ function App() {
     if (localStorage.getItem("lang")) {
       i18n.changeLanguage(localStorage.getItem("lang"));
     }
+    document.documentElement.lang = i18n.language.substring(0,2)
     window.addEventListener("resize", () => {
       setWidth(document.body.offsetWidth);
     });
