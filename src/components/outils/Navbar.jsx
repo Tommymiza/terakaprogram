@@ -73,9 +73,6 @@ const Navbar = () => {
           {width > 1325 ? (
             <ul id="principale">
               <li>
-                <Lang />
-              </li>
-              <li>
                 <NavLink to={"/"} end>
                   {t("navbar.0")}
                 </NavLink>
@@ -233,6 +230,9 @@ const Navbar = () => {
                   {t("navbar.7")}
                 </button>
               </li>
+              <li>
+                <Lang />
+              </li>
             </ul>
           ) : (
             <div
@@ -244,6 +244,7 @@ const Navbar = () => {
                 gap: "10px",
               }}
             >
+              <Lang />
               <IconButton size="medium" onClick={() => setOpen(true)}>
                 <MenuRounded htmlColor="#133A32" fontSize="large" />
               </IconButton>
@@ -503,7 +504,6 @@ const Navbar = () => {
                   </li>
                 </ul>
               </Drawer>
-              <Lang />
             </div>
           )}
         </nav>

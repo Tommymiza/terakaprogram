@@ -21,7 +21,7 @@ export const en_lang = {
       "TERAKA is a certified community reforestation and sustainable development program",
     nb: [
       "TERAKA Values",
-      "Afforestation/reforestation model",
+      "Afforestation / reforestation model",
       "Training",
       "Governance and leadership",
       "Fertilization",
