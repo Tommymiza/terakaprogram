@@ -110,7 +110,7 @@ export const en_lang = {
     content: [
       "While we do not claim to fully achieve the 17 United Nations Sustainable Development Goals (SDGs), we are contributing to them. Through their work, TERAKA farmers are having a positive effect on all of the SDGs. tabs below to see how the TERAKA program responds to the SDGs.",
     ],
-    span: "TERAKA impacts the 17 UN SDGs!",
+    span: ["TERAKA impacts the 17 UN SDGs!"],
   },
   engage: {
     sousTitre:
@@ -131,4 +131,5 @@ export const en_lang = {
   },
   contact: ["Name:", "Email:", "Message:", "Send"],
   more: "Read more",
+  footer: ["Follow us"],
 };

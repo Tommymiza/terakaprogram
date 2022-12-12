@@ -135,4 +135,5 @@ export const fr_lang = {
   },
   contact: ["Nom: ", "Email: ", "Message: ", "Envoyer"],
   more: "En savoir plus",
+  footer: ["Suivez-nous"],
 };

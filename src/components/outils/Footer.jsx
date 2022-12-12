@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/footer.scss";
 import { FacebookRounded, LinkedIn } from "@mui/icons-material";
 
-const Footer = () => {
+const Footer = ({t}) => {
   return (
     <div id="footer">
       <div>
@@ -12,7 +12,7 @@ const Footer = () => {
           style={{ width: "200px", objectFit: "contain", marginBottom: "20px" }}
         />
         <div>
-          <h3>Contactez-nous</h3>
+          <h3>{t("navbar.7")}</h3>
           <h5>TERAKA MADAGASCAR</h5>
           <p>212 route Circulaire Ambanidia</p>
           <p>Antananarivo 101</p>
@@ -27,7 +27,7 @@ const Footer = () => {
           <p>+ 33(0) 6 44 95 15 54</p>
         </div>
         <div>
-          <h3>Suivez-nous</h3>
+          <h3>{t("footer.0")}</h3>
           <FacebookRounded
             sx={{
               marginRight: 2,
@@ -56,8 +56,11 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>Partenaires</p>
-        <p>News</p>
+        <p>{t("navbar.2")}</p>
+        <p>{t("navbar.6")}</p>
+      </div>
+      <div style={{ background: "black" }}>
+        <p style={{ color: "#ccc" }}>&copy; teraka.org 2022, photos reserved</p>
       </div>
     </div>
   );

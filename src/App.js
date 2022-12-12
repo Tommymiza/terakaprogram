@@ -59,7 +59,7 @@ function App() {
         </Routes>
       </ActContext.Provider>
       <footer>
-        <Footer />
+        <Footer t={t} />
       </footer>
     </BrowserRouter>
   );
