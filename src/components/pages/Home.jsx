@@ -9,7 +9,7 @@ const Home = () => {
   const [people, setPeople] = useState(0);
   const [espece, setEspece] = useState(0);
   const [tree, setTree] = useState(0);
-  const { width } = useContext(ActContext);
+  const { width, t } = useContext(ActContext);
   const video = useRef(null);
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
@@ -56,8 +56,7 @@ const Home = () => {
         <div id="contentTitle">
           <h1 style={{ fontSize: width > 1000 ? "5rem" : "3rem" }}>Teraka</h1>
           <p>
-            Basé sur un modèle primé internationalement, TERAKA contribue aux
-            Objectifs de Développement Durable (ODD) des Nations Unies
+            {t("home.sousTitre")}
           </p>
           <div>
             <button
@@ -65,33 +64,33 @@ const Home = () => {
               onClick={() => navigate("/program")}
               style={{ fontSize: "20px", width: "140px" }}
             >
-              Programme
+              {t("navbar.1")}
             </button>
             <button
               className="nav-btn"
               onClick={() => navigate("/engage")}
               style={{ fontSize: "20px", width: "140px" }}
             >
-              S'engager
+              {t("navbar.5")}
             </button>
           </div>
         </div>
         <div id="homeNb">
           <div>
             <h1>{surface}</h1>
-            <h3>hectares</h3>
+            <h3>{t("home.nb.0")}</h3>
           </div>
           <div>
             <h1>{people}</h1>
-            <h3>bénéficiaires</h3>
+            <h3>{t("home.nb.1")}</h3>
           </div>
           <div>
             <h1>{espece}</h1>
-            <h3>espèces</h3>
+            <h3>{t("home.nb.2")}</h3>
           </div>
           <div>
             <h1>{tree} Million</h1>
-            <h3>arbres plantés</h3>
+            <h3>{t("home.nb.3")}</h3>
           </div>
         </div>
       </div>
