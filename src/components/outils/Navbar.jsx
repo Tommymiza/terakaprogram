@@ -68,9 +68,7 @@ const Navbar = () => {
               }}
             />
           </div>
-          <div>
-
-          </div>
+          <div></div>
           {width > 1280 ? (
             <ul id="principale">
               <li>
@@ -88,7 +86,7 @@ const Navbar = () => {
                         navigate("/program", { state: { param: "valeurs" } })
                       }
                     >
-                      Valeurs TERAKA
+                      {t("program.nb.0")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -100,7 +98,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Modèle de boisement/reboisement
+                      {t("program.nb.1")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -110,7 +108,7 @@ const Navbar = () => {
                         navigate("/program", { state: { param: "formation" } })
                       }
                     >
-                      Formation
+                      {t("program.nb.2")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -120,7 +118,7 @@ const Navbar = () => {
                         navigate("/program", { state: { param: "leadership" } })
                       }
                     >
-                      Gouvernance et Leadership
+                      {t("program.nb.3")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -132,7 +130,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Fertilisation croisée
+                      {t("program.nb.4")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -142,7 +140,7 @@ const Navbar = () => {
                         navigate("/program", { state: { param: "monitoring" } })
                       }
                     >
-                      Monitoring, rapportage et vérification
+                      {t("program.nb.5")}
                     </p>
                   </li>
                 </ul>
@@ -190,7 +188,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Partenariat professionnel
+                      {t("engage.nb.0")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -202,7 +200,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Partenariat philanthropique
+                      {t("engage.nb.1")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -214,7 +212,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Contribution individuelle
+                      {t("engage.nb.2")}
                     </p>
                   </li>
                 </ul>
@@ -277,12 +275,12 @@ const Navbar = () => {
                   </li>
                   <li>
                     <NavLink to={"/"} end onClick={handleClose}>
-                    {t("navbar.0")}
+                      {t("navbar.0")}
                     </NavLink>
                   </li>
                   <li>
                     <NavLink to={"/program"} onClick={handleClose}>
-                    {t("navbar.1")}
+                      {t("navbar.1")}
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(0)}
@@ -307,7 +305,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Valeurs TERAKA
+                            {t("program.nb.0")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -320,7 +318,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Modèle de boisement/reboisement
+                            {t("program.nb.1")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -333,7 +331,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Formation
+                            {t("program.nb.2")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -346,7 +344,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Gouvernance et Leadership
+                            {t("program.nb.3")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -359,7 +357,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Fertilisation croisée
+                            {t("program.nb.4")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -372,7 +370,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Monitoring, rapportage et vérification
+                            {t("program.nb.5")}
                           </p>
                         </li>
                       </ul>
@@ -380,12 +378,12 @@ const Navbar = () => {
                   )}
                   <li>
                     <NavLink to={"/partenaire"} onClick={handleClose}>
-                    {t("navbar.2")}
+                      {t("navbar.2")}
                     </NavLink>
                   </li>
                   <li>
                     <NavLink to={"/certification"} onClick={handleClose}>
-                    {t("navbar.3")}
+                      {t("navbar.3")}
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(1)}
@@ -431,12 +429,12 @@ const Navbar = () => {
                   )}
                   <li>
                     <NavLink to={"/odd"} onClick={handleClose}>
-                    {t("navbar.4")}
+                      {t("navbar.4")}
                     </NavLink>
                   </li>
                   <li>
                     <NavLink to={"/engage"} onClick={handleClose}>
-                    {t("navbar.5")}
+                      {t("navbar.5")}
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(2)}
@@ -461,7 +459,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Partenariat professionnel
+                            {t("engage.nb.0")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -474,7 +472,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Partenariat philanthropique
+                            {t("engage.nb.1")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -487,7 +485,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Contribution individuelle
+                            {t("engage.nb.2")}
                           </p>
                         </li>
                       </ul>
@@ -495,7 +493,7 @@ const Navbar = () => {
                   )}
                   <li>
                     <NavLink to={"/news"} onClick={handleClose}>
-                    {t("navbar.6")}
+                      {t("navbar.6")}
                     </NavLink>
                   </li>
                 </ul>

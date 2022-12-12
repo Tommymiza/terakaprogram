@@ -1,19 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ActContext } from "../../../App";
 
 export default function Ccb() {
+  const { t } = useContext(ActContext);
   return (
     <div className="col-content">
       <img src="/images/ccb.png" alt="ccb" />
       <p>
-        <span>
-          Le Standard CCB garantit que les projets ont été mis en œuvre en
-          utilisant les meilleures pratiques d&#39;engagement communautaire et
-          en apportant des bénéfices positifs aux communautés locales et à la
-          conservation de la biodiversité.
-        </span>{" "}
-        La certification conjointe VCS+CCB offre un moyen de garantir la qualité
-        des crédits carbone tout en présentant des bénéfices supplémentaires
-        au-delà de l&#39;atténuation des émissions de carbone.
+        <span>{t("certification.span.1")}</span> {t("certification.content.1")}
       </p>
     </div>
   );

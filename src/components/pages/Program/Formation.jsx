@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { ActContext } from "../../../App";
 
 const Formation = () => {
-    return (
-        <div className="content">
-            <h2>Formation</h2>
-        </div>
-    );
-}
+  const { t } = useContext(ActContext);
+  return (
+    <div className="content">
+      <h2>{t("program.nb.2")}</h2>
+    </div>
+  );
+};
 
 export default Formation;

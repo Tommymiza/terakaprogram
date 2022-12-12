@@ -3,32 +3,21 @@ import { ActContext } from "../../App";
 import "../../styles/partenaire.scss";
 
 const Partenaire = () => {
-  const { width } = useContext(ActContext);
+  const { width, t } = useContext(ActContext);
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
   }, []);
   return (
     <div id="partenaire">
       <h1 style={{ fontSize: width > 1000 ? "2rem" : "1.5rem" }}>
-        Partenaires
+        {t("navbar.2")}
       </h1>
       <div style={{ backgroundColor: "#ebf1f4" }}>
-        <p>
-          TERAKA travaille directement avec des petits groupes d’agriculteurs
-          volontaires qui désirent planter des arbres et qui, en retour,
-          perçoivent 70% des profits liés à la vente de crédits carbone ainsi
-          que de nombreux co-bénéfices.
-        </p>
+        <p>{t("partenaire.content.0")}</p>
       </div>
       <div>
-        <p>
-          TERAKA collabore avec TIST et deux association locales: l’ASA et
-          PARTAGE
-        </p>
-        <p>
-          A travers sa collaboration avec l’association ASA, TERAKA soutient la
-          réinsertion….
-        </p>
+        <p>{t("partenaire.content.1")}</p>
+        <p>{t("partenaire.content.2")}</p>
         <img
           src="/images/tist.png"
           alt="tist logo"
