@@ -52,7 +52,7 @@ const IndexProg = () => {
         link: "monitoring",
       },
     ];
-  }, []);
+  }, [t]);
   const state = useLocation();
   useEffect(() => {
     if (state.state !== null) {

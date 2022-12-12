@@ -9,6 +9,7 @@ import {
 import { Divider, IconButton, Drawer } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Lang from "./Lang";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -68,9 +69,12 @@ const Navbar = () => {
               }}
             />
           </div>
-          <div></div>
-          {width > 1280 ? (
+
+          {width > 1325 ? (
             <ul id="principale">
+              <li>
+                <Lang />
+              </li>
               <li>
                 <NavLink to={"/"} end>
                   {t("navbar.0")}
@@ -237,6 +241,7 @@ const Navbar = () => {
                 flexDirection: "row-reverse",
                 alignItems: "center",
                 flexWrap: "wrap",
+                gap: "10px",
               }}
             >
               <IconButton size="medium" onClick={() => setOpen(true)}>
@@ -498,6 +503,7 @@ const Navbar = () => {
                   </li>
                 </ul>
               </Drawer>
+              <Lang />
             </div>
           )}
         </nav>
