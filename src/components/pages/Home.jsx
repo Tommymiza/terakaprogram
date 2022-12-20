@@ -9,7 +9,7 @@ const Home = () => {
   const [people, setPeople] = useState(0);
   const [espece, setEspece] = useState(0);
   const [tree, setTree] = useState(0);
-  const { width, t } = useContext(ActContext);
+  const { width } = useContext(ActContext);
   const video = useRef(null);
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
@@ -42,19 +42,22 @@ const Home = () => {
   return (
     <section>
       <div id="homeTitle">
-        <video
-          onCanPlay={() => video.current?.play()}
-          playsInline
-          muted
-          alt="background"
-          loop={true}
-          src={"/images/fond.mp4"}
-          ref={video}
-        />
+        {width >= 800 && (
+          <video
+            onCanPlay={() => video.current?.play()}
+            playsInline
+            muted
+            alt="background"
+            loop={true}
+            src={"/images/fond.mp4"}
+            ref={video}
+          />
+        )}
         <div id="contentTitle">
           <h1 style={{ fontSize: width > 1000 ? "5rem" : "3rem" }}>Teraka</h1>
           <p>
-            {t("home.sousTitre")}
+            Basé sur un modèle primé internationalement, TERAKA contribue aux
+            Objectifs de Développement Durable (ODD) des Nations Unies
           </p>
           <div>
             <button
@@ -62,33 +65,33 @@ const Home = () => {
               onClick={() => navigate("/program")}
               style={{ fontSize: "20px", width: "140px" }}
             >
-              {t("navbar.1")}
+              Programme
             </button>
             <button
               className="nav-btn"
               onClick={() => navigate("/engage")}
               style={{ fontSize: "20px", width: "140px" }}
             >
-              {t("navbar.5")}
+              S'engager
             </button>
           </div>
         </div>
         <div id="homeNb">
           <div>
             <h1>{surface}</h1>
-            <h3>{t("home.nb.0")}</h3>
+            <h3>hectares</h3>
           </div>
           <div>
             <h1>{people}</h1>
-            <h3>{t("home.nb.1")}</h3>
+            <h3>bénéficiaires</h3>
           </div>
           <div>
             <h1>{espece}</h1>
-            <h3>{t("home.nb.2")}</h3>
+            <h3>espèces</h3>
           </div>
           <div>
             <h1>{tree} Million</h1>
-            <h3>{t("home.nb.3")}</h3>
+            <h3>arbres plantés</h3>
           </div>
         </div>
       </div>
