@@ -129,7 +129,7 @@
       max-width: 800px;
       min-width: 300px;
       transition: 0.2s;
-      &:hover{
+      &:hover {
         transform: scale(1.05);
       }
     }
@@ -155,16 +155,16 @@
   }
 }
 @media screen and (max-width: 1200px) {
-  .content{
-    &>div.reverse{
+  .content {
+    & > div.reverse {
       flex-direction: column;
     }
-    &>div{
+    & > div {
       flex-direction: column;
-      img{
+      img {
         width: 100%;
       }
-      &>div{
+      & > div {
         width: 100%;
       }
     }

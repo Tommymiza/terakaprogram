@@ -42,17 +42,15 @@ const Home = () => {
   return (
     <section>
       <div id="homeTitle">
-        {width >= 800 && (
-          <video
-            onCanPlay={() => video.current?.play()}
-            playsInline
-            muted
-            alt="background"
-            loop={true}
-            src={"/images/fond.mp4"}
-            ref={video}
-          />
-        )}
+        <video
+          onCanPlay={() => video.current?.play()}
+          playsInline
+          muted
+          alt="background"
+          loop={true}
+          src={"/images/fond.mp4"}
+          ref={video}
+        />
         <div id="contentTitle">
           <h1 style={{ fontSize: width > 1000 ? "5rem" : "3rem" }}>Teraka</h1>
           <p>
