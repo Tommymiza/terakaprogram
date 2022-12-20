@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import "../../styles/contact.scss"
+import React, { useEffect, useRef, useState, useContext } from "react";
+import "../../styles/contact.scss";
 import {
   TextField,
   ThemeProvider,
@@ -8,12 +8,14 @@ import {
   IconButton,
   DialogContent,
 } from "@mui/material";
-import {    Close } from "@mui/icons-material";
+import { Close } from "@mui/icons-material";
 import { theme } from "../outils/theme";
 import emailjs from "@emailjs/browser";
 import { LoadingButton } from "@mui/lab";
+import { ActContext } from "../../App";
 
 const Contact = () => {
+  const { t } = useContext(ActContext);
   const [loading, setLoading] = useState(false);
   const [dialog, setDialog] = useState("");
   const form = useRef();
@@ -44,11 +46,11 @@ const Contact = () => {
   }, []);
   return (
     <div id="contact">
-      <h1>Contactez-nous</h1>
+      <h1>{t("navbar.7")}</h1>
       <ThemeProvider theme={theme}>
         <form id="formContact" ref={form} onSubmit={handleSubmit}>
           <TextField
-            label="Nom: "
+            label={t("contact.0")}
             required
             sx={{
               width: "70%",
@@ -70,7 +72,7 @@ const Contact = () => {
             }}
           />
           <TextField
-            label="Email: "
+            label={t("contact.1")}
             type="email"
             required
             sx={{
@@ -93,7 +95,7 @@ const Contact = () => {
             }}
           />
           <TextField
-            label="Message: "
+            label={t("contact.2")}
             multiline
             maxRows={5}
             required
@@ -121,7 +123,7 @@ const Contact = () => {
             sx={{
               background: "var(--active)",
               fontFamily: "Open Sans",
-              textTransform:"none",
+              textTransform: "none",
               fontWeight: "bolder",
               color: "white",
               padding: "10px 15px",
@@ -132,7 +134,7 @@ const Contact = () => {
             }}
             loading={loading}
           >
-            Envoyer
+            {t("contact.3")}
           </LoadingButton>
         </form>
       </ThemeProvider>

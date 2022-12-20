@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { ActContext } from "../../../App"
 import { useLocation } from "react-router-dom";
 import "../../../styles/engage.scss";
 import Philanthropique from "./Philanthropique";
 import Professionnel from "./Professionnel";
 import Contribution from "./Contribution";
 const IndexEng = () => {
+  const { t } = useContext(ActContext)
   const state = useLocation();
   useEffect(() => {
     if (state.state !== null) {
@@ -17,8 +19,7 @@ const IndexEng = () => {
     <>
       <div id="engage">
         <h1>
-          Comment s’engager avec TERAKA pour reverdir Madagascar et soutenir les
-          populations locales:
+        {t("engage.sousTitre")}
         </h1>
       </div>
       <div id="professionnel" style={{ backgroundColor: "#ebf1f4" }}>

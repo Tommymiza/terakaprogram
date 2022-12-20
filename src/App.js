@@ -12,19 +12,40 @@ import Contact from "./components/pages/Contact";
 import Test from "./components/pages/Test";
 import "./styles/index.scss";
 import Footer from "./components/outils/Footer";
+import i18n from "i18next";
+import { useTranslation, initReactI18next } from "react-i18next";
+import { en_lang } from "./Localize/en";
+import { fr_lang } from "./Localize/fr";
+import { mg_lang } from "./Localize/mg";
 
 export const ActContext = createContext();
 
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: en_lang },
+    fr: { translation: fr_lang },
+    mg: { translation: mg_lang },
+  },
+  lng: window.navigator.language,
+  fallbackLng: window.navigator.language,
+  interpolation: { escapeValue: false },
+});
+
 function App() {
+  const { t } = useTranslation();
   const [width, setWidth] = useState(document.body.offsetWidth);
   useEffect(() => {
+    if (localStorage.getItem("lang")) {
+      i18n.changeLanguage(localStorage.getItem("lang"));
+    }
+    document.documentElement.lang = i18n.language.substring(0,2)
     window.addEventListener("resize", () => {
       setWidth(document.body.offsetWidth);
     });
   }, []);
   return (
     <BrowserRouter>
-      <ActContext.Provider value={{width}}>
+      <ActContext.Provider value={{ width, t }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -39,7 +60,7 @@ function App() {
         </Routes>
       </ActContext.Provider>
       <footer>
-        <Footer />
+        <Footer t={t} />
       </footer>
     </BrowserRouter>
   );

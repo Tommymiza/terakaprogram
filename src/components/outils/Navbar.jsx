@@ -9,10 +9,11 @@ import {
 import { Divider, IconButton, Drawer } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Lang from "./Lang";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { width } = useContext(ActContext);
+  const { width, t } = useContext(ActContext);
   const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
   const [state, setState] = useState(null);
@@ -68,15 +69,16 @@ const Navbar = () => {
               }}
             />
           </div>
-          {width > 1280 ? (
+
+          {width > 1325 ? (
             <ul id="principale">
               <li>
                 <NavLink to={"/"} end>
-                  Accueil
+                  {t("navbar.0")}
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/program"}>Programme</NavLink>{" "}
+                <NavLink to={"/program"}>{t("navbar.1")}</NavLink>{" "}
                 <KeyboardArrowDown />
                 <ul style={{ width: "230px" }}>
                   <li>
@@ -85,7 +87,7 @@ const Navbar = () => {
                         navigate("/program", { state: { param: "valeurs" } })
                       }
                     >
-                      Valeurs TERAKA
+                      {t("program.nb.0")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -97,7 +99,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Modèle de boisement/reboisement
+                      {t("program.nb.1")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -107,7 +109,7 @@ const Navbar = () => {
                         navigate("/program", { state: { param: "formation" } })
                       }
                     >
-                      Formation
+                      {t("program.nb.2")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -117,7 +119,7 @@ const Navbar = () => {
                         navigate("/program", { state: { param: "leadership" } })
                       }
                     >
-                      Gouvernance et Leadership
+                      {t("program.nb.3")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -129,7 +131,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Fertilisation croisée
+                      {t("program.nb.4")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -139,16 +141,16 @@ const Navbar = () => {
                         navigate("/program", { state: { param: "monitoring" } })
                       }
                     >
-                      Monitoring, rapportage et vérification
+                      {t("program.nb.5")}
                     </p>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to={"/partenaire"}>Partenaires</NavLink>
+                <NavLink to={"/partenaire"}>{t("navbar.2")}</NavLink>
               </li>
               <li>
-                <NavLink to={"/certification"}>Certification</NavLink>{" "}
+                <NavLink to={"/certification"}>{t("navbar.3")}</NavLink>{" "}
                 <KeyboardArrowDown />
                 <ul>
                   <li>
@@ -173,10 +175,10 @@ const Navbar = () => {
                 </ul>
               </li>
               <li>
-                <NavLink to={"/odd"}>ODD</NavLink>
+                <NavLink to={"/odd"}>{t("navbar.4")}</NavLink>
               </li>
               <li>
-                <NavLink to={"/engage"}>S'engager</NavLink>{" "}
+                <NavLink to={"/engage"}>{t("navbar.5")}</NavLink>{" "}
                 <KeyboardArrowDown />
                 <ul style={{ width: "230px" }}>
                   <li>
@@ -187,7 +189,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Partenariat professionnel
+                      {t("engage.nb.0")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -199,7 +201,7 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Partenariat philanthropique
+                      {t("engage.nb.1")}
                     </p>
                   </li>
                   <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -211,13 +213,13 @@ const Navbar = () => {
                         })
                       }
                     >
-                      Contribution individuelle
+                      {t("engage.nb.2")}
                     </p>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to={"/news"}>News</NavLink>
+                <NavLink to={"/news"}>{t("navbar.6")}</NavLink>
               </li>
               <li>
                 <button
@@ -225,8 +227,11 @@ const Navbar = () => {
                   onClick={() => navigate("/contact")}
                   style={{ fontSize: "14px" }}
                 >
-                  Contactez-nous
+                  {t("navbar.7")}
                 </button>
+              </li>
+              <li>
+                <Lang />
               </li>
             </ul>
           ) : (
@@ -236,8 +241,10 @@ const Navbar = () => {
                 flexDirection: "row-reverse",
                 alignItems: "center",
                 flexWrap: "wrap",
+                gap: "10px",
               }}
             >
+              <Lang />
               <IconButton size="medium" onClick={() => setOpen(true)}>
                 <MenuRounded htmlColor="#133A32" fontSize="large" />
               </IconButton>
@@ -246,7 +253,7 @@ const Navbar = () => {
                 onClick={() => navigate("/contact")}
                 style={{ fontSize: width < 400 ? "12px" : "14px" }}
               >
-                Contactez-nous
+                {t("navbar.7")}
               </button>
               <Drawer
                 open={open}
@@ -274,12 +281,12 @@ const Navbar = () => {
                   </li>
                   <li>
                     <NavLink to={"/"} end onClick={handleClose}>
-                      Accueil
+                      {t("navbar.0")}
                     </NavLink>
                   </li>
                   <li>
                     <NavLink to={"/program"} onClick={handleClose}>
-                      Programme
+                      {t("navbar.1")}
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(0)}
@@ -304,7 +311,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Valeurs TERAKA
+                            {t("program.nb.0")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -317,7 +324,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Modèle de boisement/reboisement
+                            {t("program.nb.1")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -330,7 +337,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Formation
+                            {t("program.nb.2")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -343,7 +350,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Gouvernance et Leadership
+                            {t("program.nb.3")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -356,7 +363,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Fertilisation croisée
+                            {t("program.nb.4")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -369,7 +376,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Monitoring, rapportage et vérification
+                            {t("program.nb.5")}
                           </p>
                         </li>
                       </ul>
@@ -377,12 +384,12 @@ const Navbar = () => {
                   )}
                   <li>
                     <NavLink to={"/partenaire"} onClick={handleClose}>
-                      Partenaires
+                      {t("navbar.2")}
                     </NavLink>
                   </li>
                   <li>
                     <NavLink to={"/certification"} onClick={handleClose}>
-                      Certification
+                      {t("navbar.3")}
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(1)}
@@ -428,12 +435,12 @@ const Navbar = () => {
                   )}
                   <li>
                     <NavLink to={"/odd"} onClick={handleClose}>
-                      ODD
+                      {t("navbar.4")}
                     </NavLink>
                   </li>
                   <li>
                     <NavLink to={"/engage"} onClick={handleClose}>
-                      S'engager
+                      {t("navbar.5")}
                     </NavLink>{" "}
                     <KeyboardArrowDown
                       onClick={() => handleClick(2)}
@@ -458,7 +465,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Partenariat professionnel
+                            {t("engage.nb.0")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -471,7 +478,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Partenariat philanthropique
+                            {t("engage.nb.1")}
                           </p>
                         </li>
                         <Divider sx={{ width: "100%" }} color="grey"></Divider>
@@ -484,7 +491,7 @@ const Navbar = () => {
                               });
                             }}
                           >
-                            Contribution individuelle
+                            {t("engage.nb.2")}
                           </p>
                         </li>
                       </ul>
@@ -492,7 +499,7 @@ const Navbar = () => {
                   )}
                   <li>
                     <NavLink to={"/news"} onClick={handleClose}>
-                      News
+                      {t("navbar.6")}
                     </NavLink>
                   </li>
                 </ul>
@@ -520,13 +527,13 @@ const Navbar = () => {
           className="nav-btn"
           style={{ fontSize: "12px", width: "170px" }}
         >
-          Rejoindre TERAKA
+          {t("navbar.8")}
         </button>
         <button
           className="nav-btn"
           style={{ fontSize: "12px", width: "170px" }}
         >
-          Centre de formation
+          {t("navbar.9")}
         </button>
       </div>
     </>

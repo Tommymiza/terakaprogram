@@ -1,23 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ActContext } from "../../../App";
 
 const Fertilisation = () => {
+  const { t } = useContext(ActContext);
   return (
     <div className="content">
-      <h2>Fertilisation croisée</h2>
+      <h2>{t("program.nb.4")}</h2>
       <div>
         <div>
           <h3 style={{ marginBottom: "10px" }}>
-            Le programme TERAKA se développe par le bouche à oreille
+            {t("program.fertilisation.span.0")}
           </h3>
           <div className="textCard">
-            <p>
-              Les agriculteurs découvrent TERAKA auprès d'autres agriculteurs
-              TERAKA et rejoignent de petits groupes de 6 à 12 personnes qui
-              forment des Clusters de 200 à 400 agriculteurs locaux. Les
-              clusters coordonnent les petits groupes de femmes et d'hommes et
-              offrent des opportunités de leadership qui font la différence dans
-              leur communauté locale.
-            </p>
+            <p>{t("program.fertilisation.content.0")}</p>
           </div>
         </div>
         <img src="/images/IMG_0449.jpg" alt="Fertilisation" />

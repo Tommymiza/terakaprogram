@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "../../styles/odd.scss";
 import "../../styles/programme.scss";
 import "../../styles/certificat.scss";
+import { ActContext } from "../../App";
 
 const Odd = () => {
   const odds = [
@@ -74,36 +75,22 @@ const Odd = () => {
       text: "texte 17",
     },
   ];
+  const { t } = useContext(ActContext);
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
   }, []);
   return (
     <>
       <div id="odd">
-        <h1>Objectifs de Développement Durable (ODD)</h1>
-        <p>
-          Le programme TERAKA offre de nombreux bénéfices dans une gamme de
-          domaines variés. Ces avantages sont créés par une grande diversité de
-          personnes dans différents climats et conditions. Étant donné que le
-          programme TERAKA est volontaire, les avantages recueillis par chaque
-          membre de TERAKA dépendent de sa volonté et de son implication
-          individuelles.
-        </p>
+        <h1>{t("odd.titre")}</h1>
+        <p>{t("odd.sousTitre")}</p>
       </div>
       <div
         className="col-content"
         style={{ backgroundColor: "#ebf1f4", paddingTop: "50px" }}
       >
-        <h2 style={{ fontSize: "25px" }}>
-          TERAKA impacte les 17 ODD de l’ONU !
-        </h2>
-        <p>
-          Même si nous ne prétendons pas atteindre pleinement les 17 objectifs
-          de Développement durable des Nations Unies (ODD), nous y contribuons.
-          Grâce à leur travail, les agriculteurs TERAKA ont un effet positif sur
-          l’ensemble des ODD. Déplacez-vous sur les onglets ci- dessous pour
-          voir comment le programme TERAKA répond aux ODD.
-        </p>
+        <h2 style={{ fontSize: "25px" }}>{t("odd.span.0")}</h2>
+        <p>{t("odd.content.0")}</p>
         <img src="/images/oddTitle.png" alt="odd title" />
         <div className="programme">
           {odds.map((item) => (
@@ -114,7 +101,7 @@ const Odd = () => {
               />
               <div>
                 <p>{item.text}</p>
-                <button>En savoir plus...</button>
+                <button>{t("more")}</button>
               </div>
             </div>
           ))}

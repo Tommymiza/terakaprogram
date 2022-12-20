@@ -1,39 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ActContext } from "../../../App";
 
 const Professionnel = () => {
+  const { t } = useContext(ActContext);
   return (
     <div className="engage">
-      <h2>Partenariat professionnel</h2>
-      <h3>Quel impact votre entreprise aura-t-elle ?</h3>
-      <p>
-        TERAKA aide les organisations de toutes tailles à mettre en œuvre des
-        solutions personnalisées pour répondre à des besoins spécifiques.
-      </p>
+      <h2>{t("engage.nb.0")}</h2>
+      <h3>{t("engage.qst")}</h3>
+      <p>{t("engage.content.0")}</p>
       <div>
         <div className="item-table">
-          <h3>Impact durable</h3>
-          <p>
-            Bosquets d&#39;entreprise, Plantation d&#39;arbres au point de
-            vente, Compensation carbone, Produits à faible impact, intégrations
-            personnalisées - nous renforçons votre proposition de valeur à
-            plusieurs niveaux
-          </p>
+          <h3>{t("engage.span.0")}</h3>
+          <p>{t("engage.content.1")}</p>
         </div>
         <div className="item-table">
-          <h3>Soutenir les agriculteurs</h3>
-          <p>
-            Les petites entreprises et les grandes entreprises font confiance à
-            TERAKA pour les aider à construire une empreinte verte solide, avec
-            les agriculteurs menant la route.
-          </p>
+          <h3>{t("engage.span.1")}</h3>
+          <p>{t("engage.content.2")}</p>
         </div>
         <div className="item-table">
-          <h3>Développer des Leaders</h3>
-          <p>
-            Au-delà de la plantation d&#39;arbres et de la restauration des
-            terres dégradées, nous encourageons le leadership et l&#39;éducation
-            qui soutiennent des communautés saines et autonomes.
-          </p>
+          <h3>{t("engage.span.2")}</h3>
+          <p>{t("engage.content.3")}</p>
         </div>
       </div>
     </div>
