@@ -63,14 +63,14 @@ const Home = () => {
             <button
               className="nav-btn"
               onClick={() => navigate("/program")}
-              style={{ fontSize: "16px" }}
+              style={{ fontSize: "18px", width: "150px" }}
             >
               Programme
             </button>
             <button
               className="nav-btn"
               onClick={() => navigate("/engage")}
-              style={{ fontSize: "16px" }}
+              style={{ fontSize: "18px", width: "150px" }}
             >
               S'engager
             </button>
