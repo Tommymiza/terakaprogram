@@ -225,7 +225,7 @@ const Navbar = () => {
                 <button
                   className="nav-btn"
                   onClick={() => navigate("/contact")}
-                  style={{ fontSize: "14px" }}
+                  style={{ fontSize: "16px" }}
                 >
                   {t("navbar.7")}
                 </button>
@@ -251,7 +251,7 @@ const Navbar = () => {
               <button
                 className="nav-btn"
                 onClick={() => navigate("/contact")}
-                style={{ fontSize: width < 400 ? "12px" : "14px" }}
+                style={{ fontSize: "16px" }}
               >
                 {t("navbar.7")}
               </button>
@@ -525,13 +525,13 @@ const Navbar = () => {
       >
         <button
           className="nav-btn"
-          style={{ fontSize: "12px", width: "170px" }}
+          style={{ fontSize: "16px", width: "185px" }}
         >
           {t("navbar.8")}
         </button>
         <button
           className="nav-btn"
-          style={{ fontSize: "12px", width: "170px" }}
+          style={{ fontSize: "16px", width: "185px" }}
         >
           {t("navbar.9")}
         </button>
