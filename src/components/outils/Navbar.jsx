@@ -525,13 +525,13 @@ const Navbar = () => {
       >
         <button
           className="nav-btn"
-          style={{ padding: "10px 0", fontSize: "16px", width: "170px" }}
+          style={{ padding: "10px 0", fontSize: "16px", width: "180px" }}
         >
           {t("navbar.8")}
         </button>
         <button
           className="nav-btn"
-          style={{ padding: "10px 0",fontSize: "16px", width: "170px" }}
+          style={{ padding: "10px 0",fontSize: "16px", width: "180px" }}
           >
           {t("navbar.9")}
         </button>
