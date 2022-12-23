@@ -16,25 +16,16 @@
     align-items: center;
     padding: 50px 0;
     width: 100%;
-    gap: 20px;
     p {
       width: 70%;
-      font-size: 25px;
+      font-size: 20px;
+      line-height: 35px;
       text-align: justify;
     }
     img{
         width: 40%;
         min-width: 300px;
         cursor: pointer;
-    }
-  }
-}
-@media screen and (max-width: 800px) {
-  #partenaire {
-    & > div {
-      p {
-        font-size: 20px;
-      }
     }
   }
 }

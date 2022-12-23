@@ -10,10 +10,13 @@
     font-size: 2rem;
     color: var(--theme);
     text-align: center;
+    font-weight: 900;
+    letter-spacing: 2px;
   }
   p {
     width: 70%;
-    font-size: 25px;
+    font-size: 20px;
+    line-height: 35px;
   }
 }
 .col-content {
@@ -23,17 +26,19 @@
   padding-top: 50px;
   padding-bottom: 50px;
   gap: 20px;
-  h2 {
+  h1 {
     color: var(--theme);
     margin: 20px 0;
-    font-family: "Arial";
     font-weight: bolder;
     text-align: center;
+    letter-spacing: 2px;
     width: 80%;
-    font-size: 50px;
+    font-size: 2rem;
   }
   p {
     width: 70%;
+    font-size: 20px;
+    line-height: 35px;
     span {
       font-weight: bold;
     }
@@ -43,13 +48,18 @@
     object-fit: contain;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   #certificat{
     h1{
       font-size: 1.5rem;
     }
     p{
       font-size: 20px;
+    }
+  }
+  .col-content{
+    h1{
+      font-size: 1.5rem;
     }
   }
 }

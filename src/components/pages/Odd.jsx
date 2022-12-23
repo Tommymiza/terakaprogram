@@ -89,7 +89,7 @@ const Odd = () => {
         className="col-content"
         style={{ backgroundColor: "#ebf1f4", paddingTop: "50px" }}
       >
-        <h2 style={{ fontSize: "25px" }}>{t("odd.span.0")}</h2>
+        <h1>{t("odd.span.0")}</h1>
         <p>{t("odd.content.0")}</p>
         <img src="/images/oddTitle.png" alt="odd title" />
         <div className="programme">

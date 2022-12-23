@@ -5,7 +5,7 @@ const Professionnel = () => {
   const { t } = useContext(ActContext);
   return (
     <div className="engage">
-      <h2>{t("engage.nb.0")}</h2>
+      <h1>{t("engage.nb.0")}</h1>
       <h3>{t("engage.qst")}</h3>
       <p>{t("engage.content.0")}</p>
       <div>

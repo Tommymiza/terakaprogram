@@ -5,7 +5,7 @@ const Philanthropique = () => {
   const { t } = useContext(ActContext);
   return (
     <div className="engage">
-      <h2>{t("engage.nb.1")}</h2>
+      <h1>{t("engage.nb.1")}</h1>
     </div>
   );
 };

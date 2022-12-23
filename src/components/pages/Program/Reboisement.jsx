@@ -2,10 +2,12 @@ import React, { useContext } from "react";
 import { ActContext } from "../../../App";
 
 const Reboisement = () => {
-  const { t } = useContext(ActContext);
+  const { t, width } = useContext(ActContext);
   return (
     <div className="content">
-      <h2>{t("program.nb.1")}</h2>
+      <h1 style={{ fontSize: width > 1000 ? "2rem" : "1.5rem" }}>
+        {t("program.nb.1")}
+      </h1>
       <div>
         <div>
           <h3 style={{ marginBottom: "10px" }}>

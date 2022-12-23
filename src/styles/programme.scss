@@ -104,12 +104,12 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  h2 {
+  h1 {
     color: var(--theme);
     margin: 20px 0;
-    font-family: "Arial";
-    font-weight: bolder;
     text-align: center;
+    letter-spacing: 2px;
+    font-weight: bolder;
     width: 80%;
     font-size: 35px;
   }
@@ -119,9 +119,20 @@
   & > div {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     width: 70%;
     gap: 50px;
+    div.textCard{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    h3{
+      font-size: 25px;
+    }
+    h4{
+      font-size: 20px;
+    }
     img {
       width: 50%;
       box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.5);
@@ -136,15 +147,22 @@
     ul {
       margin-left: 50px;
       font-weight: 600;
+      font-size: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
     }
     & > div {
       display: flex;
       flex-direction: column;
       width: 50%;
       align-items: center;
+      gap: 10px;
       justify-content: space-between;
       p {
         text-align: justify;
+        line-height: 35px;
+        font-size: 20px;
       }
     }
   }
@@ -161,10 +179,14 @@
     }
     & > div {
       flex-direction: column;
+      
       img {
         width: 100%;
       }
       & > div {
+        h3{
+          font-size: 22px;
+        }
         width: 100%;
       }
     }
